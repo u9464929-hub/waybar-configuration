@@ -1,7 +1,4 @@
 # 👋 Welcome!
-
-![Typing](https://readme-typing-svg.herokuapp.com?lines=Welcome+to+the+Project!;Happy+Coding!;Enjoy+Learning!)
-
 ![Typing Animation](https://readme-typing-svg.herokuapp.com?lines=Welcome+to+My+Project;Built+With+Curiosity;Learn+Build+Share)
 # 🌟 Welcome to the Project
 
