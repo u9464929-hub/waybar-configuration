@@ -1,0 +1,255 @@
+// -*- mode: jsonc -*-
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/mode",
+        "hyprland/scratchpad",
+        "custom/add",
+        "clock",
+        "hyprland/window",
+        "custom/media"
+    ],
+    "modules-center": [
+
+        
+        "hyprland/workspaces"
+        
+    ],
+    "modules-right": [
+        "mpd",
+        "custom/camera",
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "backlight",
+        //"keyboard-state",
+        //"hyprland/language",
+        "power-profiles-daemon",
+        "battery",
+        "tray",
+        "custom/power"
+        
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "default": ""
+        },
+        "on-click-right": "hyprctl dispatch killactive"
+    },
+    "hyprland/window": {
+        "max-length": 20
+    },
+    //"keyboard-state": {
+        //"numlock": true,
+        //"capslock": true,
+        //"format": "{name} {icon}",
+        //"format-icons": {
+        //    "locked": "",
+        //    "unlocked": ""
+    //    }
+    //},
+    "hyprland/mode": {
+        "format": "{<span style=\"italic\">{}</span>}"
+    },
+    "hyprland/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": true,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% 🖥",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% ⛃"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "bat-10": 10,
+            "bat-20": 20,
+            "bat-30": 30,
+            "bat-40": 40,
+            "bat-50": 50,
+            "bat-60": 60,
+            "bat-70": 70,
+            "bat-80": 80,
+            "bat-90": 90,
+            "bat-100": 100
+        },
+        "format": "{icon}",
+        "format-full": "{icon} ",
+        "format-charging": "{icon} ",
+        "format-plugged": "{icon} ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    //"battery#bat2": {
+    //    "bat": "BAT2"
+    //},
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid}",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}",
+        "states": {
+            "vol-10": 10,
+            "vol-20": 20,
+            "vol-30": 30,
+            "vol-40": 40,
+            "vol-50": 50,
+            "vol-60": 60,
+            "vol-70": 70,
+            "vol-80": 80,
+            "vol-90": 90,
+            "vol-100": 100
+        },
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click-right": "pgrep -x pavucontrol > /dev/null && pkill -x pavucontrol || pavucontrol",
+        "on-click": "pamixer -t"
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click-right": "pgrep -x pavucontrol > /dev/null && pkill -x pavucontrol || pavucontrol -t 4",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 1",
+        "on-scroll-down": "pamixer --default-source -d 1"
+    },
+    "custom/media": {
+        "format": "{text}",
+        "return-type": "json",
+        "max-length": 30,
+        "format-icons": {
+            "firefox": "🎜",
+            "default": "🎜" // Default icon used when player name is unknown
+        },
+        "escape": false,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
+        "on-click": "playerctl play-pause"
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/power": {
+        "format" : "",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    },
+    "custom/camera": {
+        "exec": "bash $HOME/.config/waybar/camera-status.sh",
+        "return-type": "json",
+        "interval": 1,
+        "on-click": "bash $HOME/.config/waybar/camera.sh"
+    },
+    "custom/launcher": {
+        "format": "",
+        "on-click": "wofi --show drun --width 30% --allow-images",
+        "tooltip": false
+    },
+    "custom/add": {
+        "format": "+",
+        "on-click": "hyprctl dispatch workspace empty",
+        "tooltip": false
+    }
+}
