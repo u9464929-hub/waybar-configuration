@@ -1,46 +1,137 @@
-![Typing](https://readme-typing-svg.herokuapp.com?lines=Welcome+to+the+Project!;Happy+Coding!;Enjoy+Learning!)
-<img src="welcome.gif" width="400"/>
-# 🌟 Welcome to the Project
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
 
-Hello there! 👋  
-We’re glad you’re here.
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at top, #0f2027, #000);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+    }
 
-This project is built with curiosity, creativity, and a passion for learning.  
-Whether you’re a **student**, **developer**, or **explorer**, you’re most welcome 🚀
+    /* Floating container */
+    .container {
+      text-align: center;
+      animation: float 4s ease-in-out infinite;
+    }
 
----
+    /* Glow text */
+    h1 {
+      font-size: 3.5rem;
+      letter-spacing: 2px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
 
-## ✨ What This Project Is About
+    p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1.5s;
+    }
 
-- 📚 Learning through experimentation  
-- 🧠 Blending **physics, computing, and technology**  
-- 🛠️ Building simple ideas into meaningful solutions  
-- 🌍 Creating tools that help people and communities
+    /* Button */
+    .btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: 2px solid #00f7ff;
+      color: #00f7ff;
+      background: transparent;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 2.5s;
+    }
 
----
+    .btn:hover {
+      background: #00f7ff;
+      color: black;
+      box-shadow: 0 0 20px #00f7ff;
+    }
 
-## 🧭 How to Get Started
+    /* Animations */
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00f7ff;
+      }
+      to {
+        text-shadow:
+          0 0 20px #00f7ff,
+          0 0 40px #00f7ff;
+      }
+    }
 
-1. Clone or download the repository  
-2. Read the documentation carefully  
-3. Run the examples  
-4. Experiment, modify, and learn!
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
 
----
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
 
-## 🤝 Contributions
+    /* Floating particles */
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #00f7ff;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: drift linear infinite;
+    }
 
-Contributions, suggestions, and improvements are always welcome 💡  
-Feel free to:
-- Open an issue
-- Submit a pull request
-- Share your ideas
+    @keyframes drift {
+      from {
+        transform: translateY(100vh);
+      }
+      to {
+        transform: translateY(-10vh);
+      }
+    }
+  </style>
+</head>
+<body>
 
----
+  <!-- Particles -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const p = document.createElement("div");
+      p.className = "particle";
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.animationDuration = 5 + Math.random() * 10 + "s";
+      document.body.appendChild(p);
+    }
+  </script>
 
-## 💬 Final Note
+  <!-- Content -->
+  <div class="container">
+    <h1>WELCOME</h1>
+    <p>Explore • Learn • Build • Innovate</p>
+    <button class="btn">Enter Project</button>
+  </div>
 
-> *“Learning never exhausts the mind.”*  
-
-Thank you for stopping by.  
-Happy learning and happy coding! 💙✨
+</body>
+</html>
