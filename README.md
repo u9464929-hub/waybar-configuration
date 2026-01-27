@@ -38,7 +38,7 @@ Feel free to:
 
 ## 💬 Final Note
 
-> *“Learning never exhausts the mind.”* — Leonardo da Vinci
+> *“Learning never exhausts the mind.”* — 
 
 Thank you for stopping by.  
 Happy learning and happy coding! 💙✨
