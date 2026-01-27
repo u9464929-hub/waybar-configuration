@@ -1,4 +1,5 @@
 ![Typing](https://readme-typing-svg.herokuapp.com?lines=Welcome+to+the+Project!;Happy+Coding!;Enjoy+Learning!)
+<img src="welcome.gif" width="400"/>
 # 🌟 Welcome to the Project
 
 Hello there! 👋  
